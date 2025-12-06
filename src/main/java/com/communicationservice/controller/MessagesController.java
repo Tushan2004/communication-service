@@ -43,7 +43,7 @@ public class MessagesController {
     @GetMapping
     public List<Messages> getMessages(@RequestParam("userId") Long userId) {
         return messagesRepository
-                .findBySender_IdOrReceiver_IdOrderByDateSentAsc(userId, userId);
+                .findBySenderIdOrReceiverIdOrderByDateSentAsc(userId, userId);
     }
 
     // Alla svar i en tråd

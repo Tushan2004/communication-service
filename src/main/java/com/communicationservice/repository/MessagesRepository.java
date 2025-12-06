@@ -9,7 +9,9 @@ import java.util.List;
 @Repository
 public interface MessagesRepository extends JpaRepository<Messages, Long> {
 
-    List<Messages> findBySender_IdOrReceiver_IdOrderByDateSentAsc(Long senderId, Long receiverId);
+    // Use the real field names: senderId, receiverId
+    List<Messages> findBySenderIdOrReceiverIdOrderByDateSentAsc(Long senderId, Long receiverId);
 
+    // This one is fine (uses parent.id)
     List<Messages> findByParent_IdOrderByDateSentAsc(Long parentId);
 }
